@@ -1,0 +1,541 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,700;0,900;1,200;1,300;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+:root{
+    --background-color-1-type-1 : black;
+    --background-color-1-type-2 : rgb(44, 44, 44);
+    --background-color-1-type-2b : rgb(44, 44, 44, .4);
+    --background-color-1-type-3 : rgb(89, 89, 89);
+    --background-color-1-type-4 : rgb(199, 199, 199);
+    --background-color-1-type-5 : rgb(220, 220, 220);
+
+    --border-color-1-type-1 : rgb(255, 187, 0);
+
+    --box-shadow-color-1-type-1: rgb(255, 221, 69);
+
+    --text-shadow-color-1-type-1: rgb(250, 0, 0);
+    --text-shadow-color-2-type-1: rgb(255, 123, 0);
+
+    --text-color-1-type-1: yellow;
+    --text-color-1-type-2: rgba(255, 255, 0, 0.9 );
+
+    --a: rgba(255, 221, 0, 0.1);
+    
+}
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    font-family: Montserrat;
+}
+html{
+    scroll-behavior: smooth;
+    -webkit-scroll-behavior: smooth ;
+}
+h1{
+    font-family: Bebas Neue;
+    font-size: 60px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px var(--text-shadow-color-1-type-1);
+    letter-spacing: 4px;
+    color: var(--text-color-1-type-1);
+}
+h2,h3,p{
+}
+em{
+    font-weight: 700;
+    color: var(--text-color-1-type-2);
+}
+em:hover{
+    text-decoration: underline 2px var(--border-color-1-type-1);
+}
+body{
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../IMG/fondos/destock-2.jpg) fixed repeat;
+    background-size: 2000px;
+    z-index: -1; 
+    animation: slide 90s infinite linear; 
+  }
+header{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color-1-type-2b);
+}
+header nav{
+    width: 80%;
+    height: 60px;
+    margin: 16px 10% 0;
+}
+header nav ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+header nav ul li{
+    border-bottom: 3px solid var(--border-color-1-type-1);
+    border-radius: 12px 12px;
+    opacity: .8;
+    background-color: var(--background-color-1-type-1);
+    transition: border-radius .3s linear, transform .3s ease-out, opacity .3s ease-out;
+}
+header nav ul li:hover{
+    border-radius: 0;
+    transform: translateY(8px) scale(1.1);
+    opacity: 1;
+}   
+header nav ul li a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 24px);
+    height: calc(100% - 12px);
+    padding: 6px 12px;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+header nav ul li a img{
+    margin-right: 12px;
+    width: 40px;
+    height: 40px;
+}
+header div{
+    padding: 20px 0 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+header div .presentacion{
+    position: relative;
+    width: 600px;
+    padding: 8px 12px 8px 110px;
+    text-align: center;
+    cursor: default;
+    border-left: 3px solid var(--border-color-1-type-1);
+}
+header div .presentacion h1{
+    text-align: center;
+    margin: 60px 0 20px;
+}
+header div .presentacion p:nth-child(3){
+    text-align: start;
+    margin: 20px 0px;
+    padding-left: 18px;
+    line-height: 30px;
+    font-weight: 400;
+    border-right: 3px solid var(--border-color-1-type-1);
+    border-left: 3px solid var(--border-color-1-type-1);
+}
+header div .presentacion p:nth-child(4){
+    font-weight: 100;
+}
+header div .presentacion p{
+    margin: 12px 0px;
+    font-size: 20px;
+    font-weight: 500;
+}
+header div .presentacion a{
+    display: inline-block;
+    width: 100px;
+    margin-top: 20px;
+    transform: rotate(90deg);
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: transform .1s linear;
+    animation-name: bajarSubir;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+header div .presentacion a:active{
+    transform: translateY(4px) rotate(90deg);
+}
+header div .presentacion a img{
+    width: 100%;
+}
+header div picture{
+    position: relative;
+    top: 30px;
+    right: 40px;
+    width: 360px;
+    height: 460px;
+    border: 1px solid var(--border-color-1-type-1);
+    border-radius: 90px 10px 90px 10px;
+    opacity: .8;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow .4s ease-out .2s, opacity .4s ease-out, border-radius .4s ease-out;
+}
+header div picture:hover{
+    box-shadow: 0 0 12px 4px var(--box-shadow-color-1-type-1);
+    border-radius: 20px 60px 20px 60px;
+    opacity: 1;
+}
+header div picture img{
+    width: 360px;
+    height: 100%;
+    transition: transform .3s ease-out;
+}
+header .triangulo-1{
+    position: absolute;
+    width: 250px;
+    height: 175px;
+    border: 1px solid var(--border-color-1-type-1);
+    background-color: var(--background-color-1-type-2);
+    border-radius: 100%;
+    z-index: -1;
+    transform: rotate(90deg) translateX(-150px) translateY(100px);
+}
+
+
+main{
+    width: 100%;
+    padding: 0px 0 40px;
+    background-color: var(--background-color-1-type-2b);
+}
+main section{
+    width: 90%;
+    margin: 0 5%;
+    padding-left: 20px;
+    border-left: 3px solid var(--border-color-1-type-1);
+    opacity: 0;
+    scale: 0.8;
+    transition: all .5s ease-out;
+}
+main section.visible{
+    opacity: 1;
+    scale: 1;
+}
+main section h2{
+    padding: 80px 0 4px;
+    margin-bottom: 32px;
+    text-align: center;
+    font-size: 36px;
+    letter-spacing: 6px;
+    text-shadow: 2px 3px 4px var(--text-shadow-color-1-type-1);
+    border-bottom: 3px solid var(--border-color-1-type-1);
+}
+main section article{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+main section article .triangulo-3{
+    position: absolute;
+    top: -50px;
+    left: 70px;
+    width: 32px;
+    height: 32px;
+    border: 3px solid var(--border-color-1-type-1);
+    background-color: var(--background-color-1-type-2);
+    border-radius: 100%;
+    z-index: 1;
+    transform: rotate(0deg) translateX(-100px);
+}
+main #sobreMi .Formacion{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: space-between;
+}
+main #sobreMi .Formacion_texto{
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+main #sobreMi .Formacion_texto img{
+    width: 140px;
+    top: 40px;
+    left: 30px;
+    padding: 8px 0;
+    position: absolute;
+    background-color: var(--background-color-1-type-1);
+    border-radius: 20px;
+}
+main #sobreMi .Formacion_texto p{
+    width: 800px;
+    margin: 12px auto;
+    padding-left: 18px;
+    line-height: 30px;
+    font-weight: 400;
+    font-size: 20px;
+    border-left: 3px solid var(--border-color-1-type-1);
+    text-align: start;
+}
+main #sobreMi .Formacion_texto p:nth-child(2){
+    margin-bottom: 50px;
+}
+main #sobreMi .Formacion .Formacion_carrera{
+    width: 550px;
+    margin: 0 auto;
+}
+main #sobreMi .Formacion .Formacion_carrera h3{
+    margin: 20px;
+    text-align: center;
+    font-size: 24px;
+    border-bottom: solid 3px var(--border-color-1-type-1);
+}
+main #sobreMi .Formacion .Formacion_carrera div{
+    margin-bottom: 20px;
+    padding: 8px;
+    position: relative;
+    width: 100%;
+    border-right: 3px solid var(--border-color-1-type-1);
+    background-color: var(--background-color-1-type-1);
+    border-radius: 8px;
+}
+main #sobreMi .Formacion .Formacion_carrera div h4{
+    display: list-item;
+    color: var(--text-color-1-type-2);
+    list-style:square;
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+main #sobreMi .Formacion .Formacion_carrera div p{
+    margin-bottom: 6px;
+    margin-left: 16px;
+}
+main #sobreMi .Formacion .Formacion_carrera div .triangulo-5{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -33px;
+    right: -108px;
+    width: 78px;
+    height: 58px;
+    border: 3px solid var(--border-color-1-type-1);
+    background-color: var(--background-color-1-type-1);
+    border-radius: 100%;
+    z-index: 1;
+    transform: rotate(0deg) translateX(-100px);
+}
+main #sobreMi .Formacion .Formacion_carrera div .triangulo-5 img{
+    width: 44px;
+}
+main #proyectos article{
+    width: calc(100% - 40px);
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); 
+    gap: 0 22px;  
+}
+main #proyectos article picture{
+    position: relative;
+    margin: 20px;
+    border: 3px solid var(--border-color-1-type-1);
+    border-radius: 90px 10px 90px 10px;
+    overflow: hidden;
+    opacity: 0.8;
+    background-color: var(--background-color-1-type-1);
+    transition: box-shadow .4s ease-out .2s, opacity .4s ease-out, border-radius .4s ease-out, scale .4s ease-out;
+}
+main #proyectos article picture:hover{
+    box-shadow: 0 0 12px 4px var(--box-shadow-color-1-type-1);
+    border-radius: 20px 60px 20px 60px;
+    opacity: 1;
+    scale: 1.1;
+}
+main #proyectos article picture .proyecto_img{
+    width: calc(100% - 24px);
+    height: calc(100% - 24px);
+    padding: 4px;
+}
+main #proyectos article picture div{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    opacity: 1.1;
+    bottom: 0;
+    padding: 20px 24px;
+    background-color: var(--background-color-1-type-1);
+    border-radius: 20px 60px 0px 0px;
+}
+main #proyectos article picture div h4{
+    color: var(--text-color-1-type-1);
+}
+main #proyectos article picture div img{
+    width: 36px;
+    margin-right: 6px;
+}
+
+
+main #contacto article{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+}
+main #contacto article>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+    left: 8px;
+    width: 300px;
+    height: 400px;
+    padding: 0px 32px 12px 20px;
+    border-radius: 12px 0 0 12px;
+    border: 1px solid var(--border-color-1-type-1);
+    background-color: var(--background-color-1-type-2);
+}
+main #contacto article>div h3{
+    text-align: center;
+    font-size: 28px;
+    color: var(--text-color-1-type-1);
+    border-bottom: 2px solid var(--border-color-1-type-1);
+}
+main #contacto article>div p strong{
+    font-size: 20px;
+    color: var(--text-color-1-type-1);
+}
+main #contacto article>div p{
+    margin-left: 12px;
+    display: list-item;
+    list-style: circle var(--border-color-1-type-1);
+}
+main #contacto article>div picture{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: 12px;
+    width: 100%;
+}
+main #contacto article>div picture img{
+    margin-right: 12px;
+    filter: brightness(0.7);
+    transition:  filter .3s ease-in;
+    cursor: pointer;
+}
+main #contacto article>div picture img:hover{
+    margin-right: 12px;
+    filter: brightness(1);
+}
+main #contacto article form{
+    text-align: end;
+    width: 500px;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: var(--background-color-1-type-1);
+    z-index: 2;
+}
+main #contacto article form div{
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+}
+main #contacto article form div label{
+    font-size: 20px;
+    margin-left: 4px;
+    margin-bottom: 4px;
+    color: var(--text-color-1-type-1);
+}
+main #contacto article form div input{
+    padding: 4px 8px;
+    margin-bottom: 8px;
+    background-color: var(--background-color-1-type-2);
+    border: 2px solid var(--background-color-1-type-3);
+    border-radius: 8px;
+}
+main #contacto article form textarea{
+    min-width: 464px;
+    width: 464px;
+    max-width: 464px;
+    min-height: 130px;
+    height: 130px;
+    max-height: 130px;
+
+    padding: 4px 8px;
+    background-color: var(--background-color-1-type-2);
+    border: 2px solid var(--background-color-1-type-3);
+    border-radius: 8px;
+}
+main #contacto article form button{
+    width: 150px;
+    height: 40px;
+    padding: 4px 12px;
+    background-color: var(--background-color-1-type-2);
+    border: 2px solid var(--background-color-1-type-4);
+    border-radius: 8px;
+    margin: 4px 8px;
+    cursor: pointer;
+    transition: box-shadow .3s ease-out;
+}
+main #contacto article form button:hover{
+    box-shadow: 0px 0px 8px 2px white;
+}
+footer{
+    height: 60px;
+    padding: 20px 0;
+    background-color: var(--background-color-1-type-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+}
+footer div p{
+    font-size: 20px;
+    color: var(--text-color-1-type-1);
+}
+footer div a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 40px;
+    padding: 4px 12px;
+    background-color: var(--background-color-1-type-2);
+    border: 2px solid var(--background-color-1-type-4);
+    border-radius: 8px;
+    margin: 4px 8px;
+    cursor: pointer;
+    transition: box-shadow .3s ease-out;
+}
+footer div a:hover{
+    box-shadow: 0px 0px 8px 2px white;
+}
+
+@keyframes slide {
+    0%{
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 50% 70%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+@keyframes bajarSubir{
+    0%{
+        transform: translateY(0) rotate(90deg);
+    }
+    50%{
+        transform: translateY(12px)  rotate(90deg);
+    }
+    100%{
+        transform: translateY(0) rotate(90deg);
+
+    }
+}
